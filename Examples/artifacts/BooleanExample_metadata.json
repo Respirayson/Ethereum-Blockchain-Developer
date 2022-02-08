@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "myBool",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_mybool",
+						"type": "bool"
+					}
+				],
+				"name": "setMyBool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/BooleanExample.sol": "BooleanExample"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/BooleanExample.sol": {
+			"keccak256": "0x53f1b39f3e6a278700a315e00883268125e7cce3853d50a4f567fcaf70a6751c",
+			"urls": [
+				"bzz-raw://18636a50f01195bfa0ae305e4024728ed9d3e415a4d43659269f93d267de2bb4",
+				"dweb:/ipfs/QmYKyVihU1kTexLtHb9rchJQHooL5deubyhvf7kZRv2anD"
+			]
+		}
+	},
+	"version": 1
+}

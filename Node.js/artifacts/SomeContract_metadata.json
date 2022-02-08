@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "myUint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_myuint",
+						"type": "uint256"
+					}
+				],
+				"name": "setUint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/Node.js/integer.sol": "SomeContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/Node.js/integer.sol": {
+			"keccak256": "0xd843510f7265bf9c733fb704021691ea209c733be2f8abd53169293a5a86864f",
+			"urls": [
+				"bzz-raw://553f292be1fd191521b473ef1fc38c8ca4c3ed8e2e2db93712a488d0ff9e039c",
+				"dweb:/ipfs/QmcQvGPthQSt12WTWUWxXZrGpP89idX3KUFUEgc9tnN8ri"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "myString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_string",
+						"type": "string"
+					}
+				],
+				"name": "setString",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/StringExample.sol": "StringExample"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/StringExample.sol": {
+			"keccak256": "0x8c767778aa70556cd830d32af3d7eeb13022af2f4e4286df13bb809bddeaaace",
+			"urls": [
+				"bzz-raw://88ba41cfc1f355b132f7ff13fc84b7f0ec2c5725d6e938c5feeed895b34ca7ae",
+				"dweb:/ipfs/Qmaqh67GYXL7yvPGe2x1YrM89jkS6Kf2xVsu3YkBXaEYZn"
+			]
+		}
+	},
+	"version": 1
+}

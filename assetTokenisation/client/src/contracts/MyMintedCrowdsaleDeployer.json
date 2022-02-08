@@ -1,0 +1,4708 @@
+{
+  "contractName": "MyMintedCrowdsaleDeployer",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ERC20Mintable",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "contract Crowdsale",
+          "name": "_crowdsale",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract ERC20Mintable\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"contract Crowdsale\",\"name\":\"_crowdsale\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MyMintableTokenSale.sol\":\"MyMintedCrowdsaleDeployer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/client/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981\",\"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51\"]},\"project:/client/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://287a2f8d5814dd0f05f22b740f18ca8321acc21c9bd03a6cb2203ea626e2f3f2\",\"dweb:/ipfs/QmZRQv9iuwU817VuqkA2WweiaibKii69x9QxYBBEfbNEud\"]},\"project:/client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x2e47b2cdef5329c40ed6633b58c6c8d074d1ab824f184e04b3625a48c719bd3a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6ab3e4898e906ebd186e661048f1bf7e1f5e2f366cbb83ff979c335c372d085d\",\"dweb:/ipfs/QmSeS7XXq8xzitPMtosK2kM5jMZeXf4JuPGHjdk7KtnE49\"]},\"project:/client/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x61437cb513a887a1bbad006e7b1c8b414478427d33de47c5600af3c748f108da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2c3d0973630ed74f2b5ce3944677a885dc70ec32fc83b35f55045a10224da32b\",\"dweb:/ipfs/QmbefZ5RoEZKNHXCALfh683PnaNYzKPcKMFjyY1DVAgq8A\"]},\"project:/client/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"project:/client/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0xc3d946432c0ddbb1f846a0d3985be71299df331b91d06732152117f62f0be2b5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4632c341a06ba5c079b51ca5a915efab4e6ab57735b37839b3e8365ff806a43e\",\"dweb:/ipfs/QmTHT3xHYed2wajEoA5qu7ii2BxLpPhQZHwAhtLK5Z7ANK\"]},\"project:/client/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x51b758a8815ecc9596c66c37d56b1d33883a444631a3f916b9fe65cb863ef7c4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://997ca03557985b3c6f9143a18b6c3a710b3bc1c7f189ee956d305a966ecfb922\",\"dweb:/ipfs/QmQaD3Wb62F88SHqmpLttvF6wKuPDQep2LLUcKPekeRzvz\"]},\"project:/client/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/client/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"keccak256\":\"0xa2f576be637946f767aa56601c26d717f48a0aff44f82e46f13807eea1009a21\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://973868f808e88e21a1a0a01d4839314515ee337ad096286c88e41b74dcc11fc2\",\"dweb:/ipfs/QmfYuZxRfx2J2xdk4EXN7jKg4bUYEMTaYk9BAw9Bqn4o2Y\"]},\"project:/contracts/Mintable.sol\":{\"keccak256\":\"0x828d9dbe7d54821930b8c47f00b081fd47e3b0a3bbaecb6fccd9da68550fef1f\",\"urls\":[\"bzz-raw://2bc52d260e504d8c280beddeb7f03d19b43d3bfff3695a27eeef716a5f3de0f6\",\"dweb:/ipfs/Qme8wf5SezGPZ6oHF8nQ7PnwYDuYrrTDzWGT95dFxsKtxH\"]},\"project:/contracts/MintedCrowdsale.sol\":{\"keccak256\":\"0x1cb348b45abfdd5754e1fe1099a8d25e95c3c68ea031d40b24c9ab5120676941\",\"urls\":[\"bzz-raw://249970d342dd1c0bcf9a3ae8597e9d321fa892000f563ac5fb4a84a8711b68af\",\"dweb:/ipfs/Qma8KQa4Gmvk9Z3TvZ68P2t5y9XrgXYncpnPMv7GAypgm6\"]},\"project:/contracts/MinterRole.sol\":{\"keccak256\":\"0x3cf9b41c3bde8d4a023bfa660ba9c6c40bc302a2bf8b02e8fa393041b138313f\",\"urls\":[\"bzz-raw://5cd601e06c09becc42ca6b5f389f3a35f783b9ffa5a1d96a2a90581fcf0ac582\",\"dweb:/ipfs/QmcyKmdxBocTJW5i2PmG2T3FHLLLtpfTh8qQvatDrtfKK1\"]},\"project:/contracts/MyMintableTokenSale.sol\":{\"keccak256\":\"0x6b9d31ce45f3ef13707fc885a08c1d52aeea53bc63e5af74b71865091c686fd3\",\"urls\":[\"bzz-raw://8f18fe9c1c540e7c0d7f39af43a8709950e9c2a4f81573a13f4c20f3787ac76d\",\"dweb:/ipfs/QmWSngz4AwgsQ6hMKL4qYYaRN2nry4o2MPQ39Wa1UyuM9v\"]},\"project:/contracts/Roles.sol\":{\"keccak256\":\"0xb1163e62723363b4acc6390756308badfc0ff438158e1340ff1592efc8546116\",\"urls\":[\"bzz-raw://d03114bce9dd9335b910c09cf6a09e28550d4886433aaca4b8717ec223deb1ad\",\"dweb:/ipfs/QmePJPMoKnjndWtdGXV5nCgae4snfDTcQhXDW8QCu9uqvx\"]},\"project:/contracts/crowdsale.sol\":{\"keccak256\":\"0xf5c629e7d716d50d775049a5152acb37dcb16ae57bcc6481ff92eacdd8a24d58\",\"urls\":[\"bzz-raw://608a3f451e42f3f95b9aafbf7b0c71da6fff2cb50a444b6e36e6a0f70b0d5618\",\"dweb:/ipfs/QmUJpZVFFjgm9TwAffBZnnmSCoEX7KUtpSUWUzYKTULAJK\"]},\"project:/contracts/kycContract.sol\":{\"keccak256\":\"0xef34f3e8dbca4007f757e87b773379f204cd5a7aa089864b5f4aa29eb38402ee\",\"urls\":[\"bzz-raw://82d71eaf8e6575b57522320d47f86fe57341105ab11e379f11ca70a2b1a475fa\",\"dweb:/ipfs/QmWBG66JxhsXCMjFXMAqm6Xnd4vG5fmmXbVdCmDgpLmG7o\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610363380380610363833981810160405281019061003291906102ac565b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663983b2d56600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166040518263ffffffff1660e01b815260040161012e91906102fb565b600060405180830381600087803b15801561014857600080fd5b505af115801561015c573d6000803e3d6000fd5b5050505060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663986502756040518163ffffffff1660e01b8152600401600060405180830381600087803b1580156101c857600080fd5b505af11580156101dc573d6000803e3d6000fd5b505050505050610316565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610217826101ec565b9050919050565b60006102298261020c565b9050919050565b6102398161021e565b811461024457600080fd5b50565b60008151905061025681610230565b92915050565b6000610267826101ec565b9050919050565b60006102798261025c565b9050919050565b6102898161026e565b811461029457600080fd5b50565b6000815190506102a681610280565b92915050565b600080604083850312156102c3576102c26101e7565b5b60006102d185828601610247565b92505060206102e285828601610297565b9150509250929050565b6102f58161020c565b82525050565b600060208201905061031060008301846102ec565b92915050565b603f806103246000396000f3fe6080604052600080fdfea2646970667358221220f6e61557d1eb3a4a072dded02f8c774c6988cfcc96de3450edba73ce79b9767b64736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220f6e61557d1eb3a4a072dded02f8c774c6988cfcc96de3450edba73ce79b9767b64736f6c634300080b0033",
+  "immutableReferences": {},
+  "generatedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:2586:19",
+        "statements": [
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "47:35:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "57:19:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "73:2:19",
+                        "type": "",
+                        "value": "64"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "67:5:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "67:9:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "memPtr",
+                      "nodeType": "YulIdentifier",
+                      "src": "57:6:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "allocate_unbounded",
+            "nodeType": "YulFunctionDefinition",
+            "returnVariables": [
+              {
+                "name": "memPtr",
+                "nodeType": "YulTypedName",
+                "src": "40:6:19",
+                "type": ""
+              }
+            ],
+            "src": "7:75:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "177:28:19",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "194:1:19",
+                        "type": "",
+                        "value": "0"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "197:1:19",
+                        "type": "",
+                        "value": "0"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "revert",
+                      "nodeType": "YulIdentifier",
+                      "src": "187:6:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "187:12:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "187:12:19"
+                }
+              ]
+            },
+            "name": "revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b",
+            "nodeType": "YulFunctionDefinition",
+            "src": "88:117:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "300:28:19",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "317:1:19",
+                        "type": "",
+                        "value": "0"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "320:1:19",
+                        "type": "",
+                        "value": "0"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "revert",
+                      "nodeType": "YulIdentifier",
+                      "src": "310:6:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "310:12:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "310:12:19"
+                }
+              ]
+            },
+            "name": "revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db",
+            "nodeType": "YulFunctionDefinition",
+            "src": "211:117:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "379:81:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "389:65:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "404:5:19"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "411:42:19",
+                        "type": "",
+                        "value": "0xffffffffffffffffffffffffffffffffffffffff"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "and",
+                      "nodeType": "YulIdentifier",
+                      "src": "400:3:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "400:54:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "389:7:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_uint160",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "361:5:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "371:7:19",
+                "type": ""
+              }
+            ],
+            "src": "334:126:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "511:51:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "521:35:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "550:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "cleanup_t_uint160",
+                      "nodeType": "YulIdentifier",
+                      "src": "532:17:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "532:24:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "521:7:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_address",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "493:5:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "503:7:19",
+                "type": ""
+              }
+            ],
+            "src": "466:96:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "635:51:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "645:35:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "674:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "cleanup_t_address",
+                      "nodeType": "YulIdentifier",
+                      "src": "656:17:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "656:24:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "645:7:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_contract$_ERC20Mintable_$1731",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "617:5:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "627:7:19",
+                "type": ""
+              }
+            ],
+            "src": "568:118:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "757:101:19",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "836:16:19",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "845:1:19",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "848:1:19",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "838:6:19"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "838:12:19"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "838:12:19"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "780:5:19"
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "name": "value",
+                                "nodeType": "YulIdentifier",
+                                "src": "827:5:19"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "cleanup_t_contract$_ERC20Mintable_$1731",
+                              "nodeType": "YulIdentifier",
+                              "src": "787:39:19"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "787:46:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "eq",
+                          "nodeType": "YulIdentifier",
+                          "src": "777:2:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "777:57:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "iszero",
+                      "nodeType": "YulIdentifier",
+                      "src": "770:6:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "770:65:19"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "767:85:19"
+                }
+              ]
+            },
+            "name": "validator_revert_t_contract$_ERC20Mintable_$1731",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "750:5:19",
+                "type": ""
+              }
+            ],
+            "src": "692:166:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "949:102:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "959:22:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "offset",
+                        "nodeType": "YulIdentifier",
+                        "src": "974:6:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "968:5:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "968:13:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value",
+                      "nodeType": "YulIdentifier",
+                      "src": "959:5:19"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "1039:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "validator_revert_t_contract$_ERC20Mintable_$1731",
+                      "nodeType": "YulIdentifier",
+                      "src": "990:48:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "990:55:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "990:55:19"
+                }
+              ]
+            },
+            "name": "abi_decode_t_contract$_ERC20Mintable_$1731_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "offset",
+                "nodeType": "YulTypedName",
+                "src": "927:6:19",
+                "type": ""
+              },
+              {
+                "name": "end",
+                "nodeType": "YulTypedName",
+                "src": "935:3:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "943:5:19",
+                "type": ""
+              }
+            ],
+            "src": "864:187:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1110:51:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1120:35:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "1149:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "cleanup_t_uint160",
+                      "nodeType": "YulIdentifier",
+                      "src": "1131:17:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1131:24:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "1120:7:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_address_payable",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "1092:5:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "1102:7:19",
+                "type": ""
+              }
+            ],
+            "src": "1057:104:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1230:59:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1240:43:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "1277:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "cleanup_t_address_payable",
+                      "nodeType": "YulIdentifier",
+                      "src": "1251:25:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1251:32:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "1240:7:19"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_contract$_Crowdsale_$2501",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "1212:5:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "1222:7:19",
+                "type": ""
+              }
+            ],
+            "src": "1167:122:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1356:97:19",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "1431:16:19",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "1440:1:19",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "1443:1:19",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "1433:6:19"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1433:12:19"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "1433:12:19"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "1379:5:19"
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "name": "value",
+                                "nodeType": "YulIdentifier",
+                                "src": "1422:5:19"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "cleanup_t_contract$_Crowdsale_$2501",
+                              "nodeType": "YulIdentifier",
+                              "src": "1386:35:19"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "1386:42:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "eq",
+                          "nodeType": "YulIdentifier",
+                          "src": "1376:2:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1376:53:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "iszero",
+                      "nodeType": "YulIdentifier",
+                      "src": "1369:6:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1369:61:19"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "1366:81:19"
+                }
+              ]
+            },
+            "name": "validator_revert_t_contract$_Crowdsale_$2501",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "1349:5:19",
+                "type": ""
+              }
+            ],
+            "src": "1295:158:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1540:98:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1550:22:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "offset",
+                        "nodeType": "YulIdentifier",
+                        "src": "1565:6:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "1559:5:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1559:13:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value",
+                      "nodeType": "YulIdentifier",
+                      "src": "1550:5:19"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "1626:5:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "validator_revert_t_contract$_Crowdsale_$2501",
+                      "nodeType": "YulIdentifier",
+                      "src": "1581:44:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1581:51:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "1581:51:19"
+                }
+              ]
+            },
+            "name": "abi_decode_t_contract$_Crowdsale_$2501_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "offset",
+                "nodeType": "YulTypedName",
+                "src": "1518:6:19",
+                "type": ""
+              },
+              {
+                "name": "end",
+                "nodeType": "YulTypedName",
+                "src": "1526:3:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "1534:5:19",
+                "type": ""
+              }
+            ],
+            "src": "1459:179:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1778:453:19",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "1824:83:19",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [],
+                          "functionName": {
+                            "name": "revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b",
+                            "nodeType": "YulIdentifier",
+                            "src": "1826:77:19"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1826:79:19"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "1826:79:19"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "1799:7:19"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "1808:9:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "1795:3:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1795:23:19"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1820:2:19",
+                        "type": "",
+                        "value": "64"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "slt",
+                      "nodeType": "YulIdentifier",
+                      "src": "1791:3:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1791:32:19"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "1788:119:19"
+                },
+                {
+                  "nodeType": "YulBlock",
+                  "src": "1917:150:19",
+                  "statements": [
+                    {
+                      "nodeType": "YulVariableDeclaration",
+                      "src": "1932:15:19",
+                      "value": {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1946:1:19",
+                        "type": "",
+                        "value": "0"
+                      },
+                      "variables": [
+                        {
+                          "name": "offset",
+                          "nodeType": "YulTypedName",
+                          "src": "1936:6:19",
+                          "type": ""
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "YulAssignment",
+                      "src": "1961:96:19",
+                      "value": {
+                        "arguments": [
+                          {
+                            "arguments": [
+                              {
+                                "name": "headStart",
+                                "nodeType": "YulIdentifier",
+                                "src": "2029:9:19"
+                              },
+                              {
+                                "name": "offset",
+                                "nodeType": "YulIdentifier",
+                                "src": "2040:6:19"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "add",
+                              "nodeType": "YulIdentifier",
+                              "src": "2025:3:19"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "2025:22:19"
+                          },
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "2049:7:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "abi_decode_t_contract$_ERC20Mintable_$1731_fromMemory",
+                          "nodeType": "YulIdentifier",
+                          "src": "1971:53:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1971:86:19"
+                      },
+                      "variableNames": [
+                        {
+                          "name": "value0",
+                          "nodeType": "YulIdentifier",
+                          "src": "1961:6:19"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulBlock",
+                  "src": "2077:147:19",
+                  "statements": [
+                    {
+                      "nodeType": "YulVariableDeclaration",
+                      "src": "2092:16:19",
+                      "value": {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "2106:2:19",
+                        "type": "",
+                        "value": "32"
+                      },
+                      "variables": [
+                        {
+                          "name": "offset",
+                          "nodeType": "YulTypedName",
+                          "src": "2096:6:19",
+                          "type": ""
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "YulAssignment",
+                      "src": "2122:92:19",
+                      "value": {
+                        "arguments": [
+                          {
+                            "arguments": [
+                              {
+                                "name": "headStart",
+                                "nodeType": "YulIdentifier",
+                                "src": "2186:9:19"
+                              },
+                              {
+                                "name": "offset",
+                                "nodeType": "YulIdentifier",
+                                "src": "2197:6:19"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "add",
+                              "nodeType": "YulIdentifier",
+                              "src": "2182:3:19"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "2182:22:19"
+                          },
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "2206:7:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "abi_decode_t_contract$_Crowdsale_$2501_fromMemory",
+                          "nodeType": "YulIdentifier",
+                          "src": "2132:49:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "2132:82:19"
+                      },
+                      "variableNames": [
+                        {
+                          "name": "value1",
+                          "nodeType": "YulIdentifier",
+                          "src": "2122:6:19"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_decode_tuple_t_contract$_ERC20Mintable_$1731t_contract$_Crowdsale_$2501_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "1740:9:19",
+                "type": ""
+              },
+              {
+                "name": "dataEnd",
+                "nodeType": "YulTypedName",
+                "src": "1751:7:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "1763:6:19",
+                "type": ""
+              },
+              {
+                "name": "value1",
+                "nodeType": "YulTypedName",
+                "src": "1771:6:19",
+                "type": ""
+              }
+            ],
+            "src": "1644:587:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "2302:53:19",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "2319:3:19"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "2342:5:19"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "cleanup_t_address",
+                          "nodeType": "YulIdentifier",
+                          "src": "2324:17:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "2324:24:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "2312:6:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2312:37:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "2312:37:19"
+                }
+              ]
+            },
+            "name": "abi_encode_t_address_to_t_address_fromStack",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "2290:5:19",
+                "type": ""
+              },
+              {
+                "name": "pos",
+                "nodeType": "YulTypedName",
+                "src": "2297:3:19",
+                "type": ""
+              }
+            ],
+            "src": "2237:118:19"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "2459:124:19",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "2469:26:19",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "2481:9:19"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "2492:2:19",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "2477:3:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2477:18:19"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "2469:4:19"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value0",
+                        "nodeType": "YulIdentifier",
+                        "src": "2549:6:19"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "2562:9:19"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "2573:1:19",
+                            "type": "",
+                            "value": "0"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "2558:3:19"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "2558:17:19"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_encode_t_address_to_t_address_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "2505:43:19"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2505:71:19"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "2505:71:19"
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_address__to_t_address__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "2431:9:19",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "2443:6:19",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "2454:4:19",
+                "type": ""
+              }
+            ],
+            "src": "2361:222:19"
+          }
+        ]
+      },
+      "contents": "{\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_contract$_ERC20Mintable_$1731(value) -> cleaned {\n        cleaned := cleanup_t_address(value)\n    }\n\n    function validator_revert_t_contract$_ERC20Mintable_$1731(value) {\n        if iszero(eq(value, cleanup_t_contract$_ERC20Mintable_$1731(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_contract$_ERC20Mintable_$1731_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_contract$_ERC20Mintable_$1731(value)\n    }\n\n    function cleanup_t_address_payable(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_contract$_Crowdsale_$2501(value) -> cleaned {\n        cleaned := cleanup_t_address_payable(value)\n    }\n\n    function validator_revert_t_contract$_Crowdsale_$2501(value) {\n        if iszero(eq(value, cleanup_t_contract$_Crowdsale_$2501(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_contract$_Crowdsale_$2501_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_contract$_Crowdsale_$2501(value)\n    }\n\n    function abi_decode_tuple_t_contract$_ERC20Mintable_$1731t_contract$_Crowdsale_$2501_fromMemory(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_contract$_ERC20Mintable_$1731_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_contract$_Crowdsale_$2501_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n}\n",
+      "id": 19,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "deployedGeneratedSources": [],
+  "sourceMap": "1310:441:13:-:0;;;1404:344;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1500:6;1492:5;;:14;;;;;;;;;;;;;;;;;;1529:10;1517:9;;:22;;;;;;;;;;;;;;;;;;1672:5;;;;;;;;;;:15;;;1696:9;;;;;;;;;;;1672:35;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1718:5;;;;;;;;;;:20;;;:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1404:344;;1310:441;;88:117:19;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:118::-;627:7;656:24;674:5;656:24;:::i;:::-;645:35;;568:118;;;:::o;692:166::-;787:46;827:5;787:46;:::i;:::-;780:5;777:57;767:85;;848:1;845;838:12;767:85;692:166;:::o;864:187::-;943:5;974:6;968:13;959:22;;990:55;1039:5;990:55;:::i;:::-;864:187;;;;:::o;1057:104::-;1102:7;1131:24;1149:5;1131:24;:::i;:::-;1120:35;;1057:104;;;:::o;1167:122::-;1222:7;1251:32;1277:5;1251:32;:::i;:::-;1240:43;;1167:122;;;:::o;1295:158::-;1386:42;1422:5;1386:42;:::i;:::-;1379:5;1376:53;1366:81;;1443:1;1440;1433:12;1366:81;1295:158;:::o;1459:179::-;1534:5;1565:6;1559:13;1550:22;;1581:51;1626:5;1581:51;:::i;:::-;1459:179;;;;:::o;1644:587::-;1763:6;1771;1820:2;1808:9;1799:7;1795:23;1791:32;1788:119;;;1826:79;;:::i;:::-;1788:119;1946:1;1971:86;2049:7;2040:6;2029:9;2025:22;1971:86;:::i;:::-;1961:96;;1917:150;2106:2;2132:82;2206:7;2197:6;2186:9;2182:22;2132:82;:::i;:::-;2122:92;;2077:147;1644:587;;;;;:::o;2237:118::-;2324:24;2342:5;2324:24;:::i;:::-;2319:3;2312:37;2237:118;;:::o;2361:222::-;2454:4;2492:2;2481:9;2477:18;2469:26;;2505:71;2573:1;2562:9;2558:17;2549:6;2505:71;:::i;:::-;2361:222;;;;:::o;1310:441:13:-;;;;;;;",
+  "deployedSourceMap": "1310:441:13:-:0;;;;;",
+  "source": "pragma solidity ^0.8.0;\r\n\r\nimport \"../client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol\";\r\nimport \"./Mintable.sol\";\r\nimport \"./crowdsale.sol\";\r\nimport \"./MintedCrowdsale.sol\";\r\nimport \"./kycContract.sol\";\r\n\r\ncontract MyMintedToken is ERC20Mintable {\r\n    constructor(uint _initialSupply) ERC20Mintable(_initialSupply) MinterRole() {\r\n\r\n    }\r\n}\r\n\r\ncontract MyMintedCrowdsale is Crowdsale, MintedCrowdsale {\r\n\r\n    kycContract kyc;\r\n    constructor(\r\n        uint256 rate,    // rate in TKNbits\r\n        address payable wallet,\r\n        IERC20 token,\r\n        kycContract _kyc\r\n    )\r\n        MintedCrowdsale(rate, wallet, token)\r\n        public\r\n    {\r\n        kyc = _kyc;\r\n    }\r\n\r\n    function _deliverTokens(address beneficiary, uint256 tokenAmount) internal override(Crowdsale, MintedCrowdsale) virtual {\r\n    // Potentially dangerous assumption about the type of the token.\r\n    require(\r\n        ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),\r\n            \"MintedCrowdsale: minting failed\"\r\n    );\r\n    }\r\n\r\n    function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal view override {\r\n        super._preValidatePurchase(beneficiary, weiAmount);\r\n        require(kyc.kycCompleted(msg.sender), \"KYC not completed, you are not allowed\");\r\n    }\r\n}\r\n\r\ncontract MyMintedCrowdsaleDeployer {\r\n    ERC20Mintable token;\r\n    Crowdsale crowdsale;\r\n    constructor(ERC20Mintable _token, Crowdsale _crowdsale)\r\n        public\r\n    {\r\n        token = _token;\r\n        crowdsale = _crowdsale;\r\n        // transfer the minter role from this contract (the default)\r\n        // to the crowdsale, so it can mint tokens\r\n        token.addMinter(address(crowdsale));\r\n        token.renounceMinter();\r\n    }\r\n}",
+  "sourcePath": "C:\\Users\\ryany\\OneDrive\\Desktop\\coding\\Ethereum Blockchain Development\\assetTokenisation\\contracts\\MyMintableTokenSale.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/MyMintableTokenSale.sol",
+    "exportedSymbols": {
+      "Address": [
+        1314
+      ],
+      "Context": [
+        1336
+      ],
+      "Crowdsale": [
+        2501
+      ],
+      "ERC20": [
+        690
+      ],
+      "ERC20Mintable": [
+        1731
+      ],
+      "IERC20": [
+        768
+      ],
+      "IERC20Metadata": [
+        793
+      ],
+      "MintedCrowdsale": [
+        1780
+      ],
+      "MinterRole": [
+        1889
+      ],
+      "MyMintedCrowdsale": [
+        1992
+      ],
+      "MyMintedCrowdsaleDeployer": [
+        2031
+      ],
+      "MyMintedToken": [
+        1910
+      ],
+      "Ownable": [
+        104
+      ],
+      "ReentrancyGuard": [
+        144
+      ],
+      "Roles": [
+        2200
+      ],
+      "SafeERC20": [
+        1017
+      ],
+      "SafeMath": [
+        1648
+      ],
+      "kycContract": [
+        2551
+      ]
+    },
+    "id": 2032,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1891,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "project:/client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "file": "../client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "id": 1892,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 691,
+        "src": "27:78:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/Mintable.sol",
+        "file": "./Mintable.sol",
+        "id": 1893,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 1732,
+        "src": "107:24:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/crowdsale.sol",
+        "file": "./crowdsale.sol",
+        "id": 1894,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 2502,
+        "src": "133:25:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/MintedCrowdsale.sol",
+        "file": "./MintedCrowdsale.sol",
+        "id": 1895,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 1781,
+        "src": "160:31:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/kycContract.sol",
+        "file": "./kycContract.sol",
+        "id": 1896,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 2552,
+        "src": "193:27:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1897,
+              "name": "ERC20Mintable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1731,
+              "src": "250:13:13"
+            },
+            "id": 1898,
+            "nodeType": "InheritanceSpecifier",
+            "src": "250:13:13"
+          }
+        ],
+        "canonicalName": "MyMintedToken",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1910,
+        "linearizedBaseContracts": [
+          1910,
+          1731,
+          1889,
+          690,
+          793,
+          768,
+          1336
+        ],
+        "name": "MyMintedToken",
+        "nameLocation": "233:13:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1908,
+              "nodeType": "Block",
+              "src": "347:10:13",
+              "statements": []
+            },
+            "id": 1909,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 1903,
+                    "name": "_initialSupply",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1900,
+                    "src": "318:14:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 1904,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1902,
+                  "name": "ERC20Mintable",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1731,
+                  "src": "304:13:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "304:29:13"
+              },
+              {
+                "arguments": [],
+                "id": 1906,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1905,
+                  "name": "MinterRole",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1889,
+                  "src": "334:10:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "334:12:13"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1900,
+                  "mutability": "mutable",
+                  "name": "_initialSupply",
+                  "nameLocation": "288:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1909,
+                  "src": "283:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1899,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "282:21:13"
+            },
+            "returnParameters": {
+              "id": 1907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "347:0:13"
+            },
+            "scope": 1910,
+            "src": "271:86:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2032,
+        "src": "224:136:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1911,
+              "name": "Crowdsale",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2501,
+              "src": "394:9:13"
+            },
+            "id": 1912,
+            "nodeType": "InheritanceSpecifier",
+            "src": "394:9:13"
+          },
+          {
+            "baseName": {
+              "id": 1913,
+              "name": "MintedCrowdsale",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1780,
+              "src": "405:15:13"
+            },
+            "id": 1914,
+            "nodeType": "InheritanceSpecifier",
+            "src": "405:15:13"
+          }
+        ],
+        "canonicalName": "MyMintedCrowdsale",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1992,
+        "linearizedBaseContracts": [
+          1992,
+          1780,
+          2501,
+          144,
+          1336
+        ],
+        "name": "MyMintedCrowdsale",
+        "nameLocation": "373:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1917,
+            "mutability": "mutable",
+            "name": "kyc",
+            "nameLocation": "442:3:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 1992,
+            "src": "430:15:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_kycContract_$2551",
+              "typeString": "contract kycContract"
+            },
+            "typeName": {
+              "id": 1916,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1915,
+                "name": "kycContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2551,
+                "src": "430:11:13"
+              },
+              "referencedDeclaration": 2551,
+              "src": "430:11:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_kycContract_$2551",
+                "typeString": "contract kycContract"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1939,
+              "nodeType": "Block",
+              "src": "666:29:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1937,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1935,
+                      "name": "kyc",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1917,
+                      "src": "677:3:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_kycContract_$2551",
+                        "typeString": "contract kycContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1936,
+                      "name": "_kyc",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1927,
+                      "src": "683:4:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_kycContract_$2551",
+                        "typeString": "contract kycContract"
+                      }
+                    },
+                    "src": "677:10:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_kycContract_$2551",
+                      "typeString": "contract kycContract"
+                    }
+                  },
+                  "id": 1938,
+                  "nodeType": "ExpressionStatement",
+                  "src": "677:10:13"
+                }
+              ]
+            },
+            "id": 1940,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 1930,
+                    "name": "rate",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1919,
+                    "src": "624:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "id": 1931,
+                    "name": "wallet",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1921,
+                    "src": "630:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  {
+                    "id": 1932,
+                    "name": "token",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1924,
+                    "src": "638:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$768",
+                      "typeString": "contract IERC20"
+                    }
+                  }
+                ],
+                "id": 1933,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1929,
+                  "name": "MintedCrowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1780,
+                  "src": "608:15:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "608:36:13"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1928,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1919,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nameLocation": "482:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "474:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1918,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1921,
+                  "mutability": "mutable",
+                  "name": "wallet",
+                  "nameLocation": "535:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "519:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1920,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "519:15:13",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1924,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "559:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "552:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$768",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 1923,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1922,
+                      "name": "IERC20",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 768,
+                      "src": "552:6:13"
+                    },
+                    "referencedDeclaration": 768,
+                    "src": "552:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$768",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1927,
+                  "mutability": "mutable",
+                  "name": "_kyc",
+                  "nameLocation": "587:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "575:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_kycContract_$2551",
+                    "typeString": "contract kycContract"
+                  },
+                  "typeName": {
+                    "id": 1926,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1925,
+                      "name": "kycContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 2551,
+                      "src": "575:11:13"
+                    },
+                    "referencedDeclaration": 2551,
+                    "src": "575:11:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_kycContract_$2551",
+                      "typeString": "contract kycContract"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:135:13"
+            },
+            "returnParameters": {
+              "id": 1934,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "666:0:13"
+            },
+            "scope": 1992,
+            "src": "452:243:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              1779,
+              2451
+            ],
+            "body": {
+              "id": 1965,
+              "nodeType": "Block",
+              "src": "823:220:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 1959,
+                            "name": "beneficiary",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1942,
+                            "src": "955:11:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "id": 1960,
+                            "name": "tokenAmount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1944,
+                            "src": "968:11:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "arguments": [
+                              {
+                                "arguments": [
+                                  {
+                                    "arguments": [],
+                                    "expression": {
+                                      "argumentTypes": [],
+                                      "id": 1954,
+                                      "name": "token",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2313,
+                                      "src": "940:5:13",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_IERC20_$768_$",
+                                        "typeString": "function () view returns (contract IERC20)"
+                                      }
+                                    },
+                                    "id": 1955,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "kind": "functionCall",
+                                    "lValueRequested": false,
+                                    "names": [],
+                                    "nodeType": "FunctionCall",
+                                    "src": "940:7:13",
+                                    "tryCall": false,
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_IERC20_$768",
+                                      "typeString": "contract IERC20"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_IERC20_$768",
+                                      "typeString": "contract IERC20"
+                                    }
+                                  ],
+                                  "id": 1953,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "932:7:13",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_address_$",
+                                    "typeString": "type(address)"
+                                  },
+                                  "typeName": {
+                                    "id": 1952,
+                                    "name": "address",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "932:7:13",
+                                    "typeDescriptions": {}
+                                  }
+                                },
+                                "id": 1956,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "932:16:13",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 1951,
+                              "name": "ERC20Mintable",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1731,
+                              "src": "918:13:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_ERC20Mintable_$1731_$",
+                                "typeString": "type(contract ERC20Mintable)"
+                              }
+                            },
+                            "id": 1957,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "918:31:13",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                              "typeString": "contract ERC20Mintable"
+                            }
+                          },
+                          "id": 1958,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "mint",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1730,
+                          "src": "918:36:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 1961,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "918:62:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4d696e74656443726f776473616c653a206d696e74696e67206661696c6564",
+                        "id": 1962,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:33:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d0eac45d7b8513926ae2e01dfc6ebd8082fa88af4d89904f45e3d97f75d97ab5",
+                          "typeString": "literal_string \"MintedCrowdsale: minting failed\""
+                        },
+                        "value": "MintedCrowdsale: minting failed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d0eac45d7b8513926ae2e01dfc6ebd8082fa88af4d89904f45e3d97f75d97ab5",
+                          "typeString": "literal_string \"MintedCrowdsale: minting failed\""
+                        }
+                      ],
+                      "id": 1950,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "900:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1963,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "900:135:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1964,
+                  "nodeType": "ExpressionStatement",
+                  "src": "900:135:13"
+                }
+              ]
+            },
+            "id": 1966,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_deliverTokens",
+            "nameLocation": "712:14:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1948,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [
+                {
+                  "id": 1946,
+                  "name": "Crowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2501,
+                  "src": "787:9:13"
+                },
+                {
+                  "id": 1947,
+                  "name": "MintedCrowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1780,
+                  "src": "798:15:13"
+                }
+              ],
+              "src": "778:36:13"
+            },
+            "parameters": {
+              "id": 1945,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1942,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "735:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1966,
+                  "src": "727:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1941,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "727:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1944,
+                  "mutability": "mutable",
+                  "name": "tokenAmount",
+                  "nameLocation": "756:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1966,
+                  "src": "748:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1943,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "748:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "726:42:13"
+            },
+            "returnParameters": {
+              "id": 1949,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "823:0:13"
+            },
+            "scope": 1992,
+            "src": "703:340:13",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              2426
+            ],
+            "body": {
+              "id": 1990,
+              "nodeType": "Block",
+              "src": "1144:159:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1977,
+                        "name": "beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1968,
+                        "src": "1182:11:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 1978,
+                        "name": "weiAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1970,
+                        "src": "1195:9:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 1974,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967271,
+                        "src": "1155:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_super$_MyMintedCrowdsale_$1992_$",
+                          "typeString": "type(contract super MyMintedCrowdsale)"
+                        }
+                      },
+                      "id": 1976,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_preValidatePurchase",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2426,
+                      "src": "1155:26:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) view"
+                      }
+                    },
+                    "id": 1979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1155:50:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1155:50:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 1984,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "1241:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1985,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "1241:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "id": 1982,
+                            "name": "kyc",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1917,
+                            "src": "1224:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_kycContract_$2551",
+                              "typeString": "contract kycContract"
+                            }
+                          },
+                          "id": 1983,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "kycCompleted",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2550,
+                          "src": "1224:16:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 1986,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1224:28:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4b5943206e6f7420636f6d706c657465642c20796f7520617265206e6f7420616c6c6f776564",
+                        "id": 1987,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1254:40:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_cdd8972ceaeaa9f36d47e1c639692fb977ba86beab91e351a91bc56230a26321",
+                          "typeString": "literal_string \"KYC not completed, you are not allowed\""
+                        },
+                        "value": "KYC not completed, you are not allowed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_cdd8972ceaeaa9f36d47e1c639692fb977ba86beab91e351a91bc56230a26321",
+                          "typeString": "literal_string \"KYC not completed, you are not allowed\""
+                        }
+                      ],
+                      "id": 1981,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1216:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1988,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1216:79:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1989,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1216:79:13"
+                }
+              ]
+            },
+            "id": 1991,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_preValidatePurchase",
+            "nameLocation": "1060:20:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1972,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1135:8:13"
+            },
+            "parameters": {
+              "id": 1971,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1968,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "1089:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1991,
+                  "src": "1081:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1967,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1081:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1970,
+                  "mutability": "mutable",
+                  "name": "weiAmount",
+                  "nameLocation": "1110:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1991,
+                  "src": "1102:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1969,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1102:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1080:40:13"
+            },
+            "returnParameters": {
+              "id": 1973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1144:0:13"
+            },
+            "scope": 1992,
+            "src": "1051:252:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2032,
+        "src": "364:942:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MyMintedCrowdsaleDeployer",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2031,
+        "linearizedBaseContracts": [
+          2031
+        ],
+        "name": "MyMintedCrowdsaleDeployer",
+        "nameLocation": "1319:25:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1995,
+            "mutability": "mutable",
+            "name": "token",
+            "nameLocation": "1366:5:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2031,
+            "src": "1352:19:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+              "typeString": "contract ERC20Mintable"
+            },
+            "typeName": {
+              "id": 1994,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1993,
+                "name": "ERC20Mintable",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1731,
+                "src": "1352:13:13"
+              },
+              "referencedDeclaration": 1731,
+              "src": "1352:13:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                "typeString": "contract ERC20Mintable"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1998,
+            "mutability": "mutable",
+            "name": "crowdsale",
+            "nameLocation": "1388:9:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2031,
+            "src": "1378:19:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+              "typeString": "contract Crowdsale"
+            },
+            "typeName": {
+              "id": 1997,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1996,
+                "name": "Crowdsale",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2501,
+                "src": "1378:9:13"
+              },
+              "referencedDeclaration": 2501,
+              "src": "1378:9:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                "typeString": "contract Crowdsale"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2029,
+              "nodeType": "Block",
+              "src": "1481:267:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2009,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2007,
+                      "name": "token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1995,
+                      "src": "1492:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                        "typeString": "contract ERC20Mintable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 2008,
+                      "name": "_token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2001,
+                      "src": "1500:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                        "typeString": "contract ERC20Mintable"
+                      }
+                    },
+                    "src": "1492:14:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                      "typeString": "contract ERC20Mintable"
+                    }
+                  },
+                  "id": 2010,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1492:14:13"
+                },
+                {
+                  "expression": {
+                    "id": 2013,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2011,
+                      "name": "crowdsale",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1998,
+                      "src": "1517:9:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                        "typeString": "contract Crowdsale"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 2012,
+                      "name": "_crowdsale",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2004,
+                      "src": "1529:10:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                        "typeString": "contract Crowdsale"
+                      }
+                    },
+                    "src": "1517:22:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                      "typeString": "contract Crowdsale"
+                    }
+                  },
+                  "id": 2014,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1517:22:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 2020,
+                            "name": "crowdsale",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1998,
+                            "src": "1696:9:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                              "typeString": "contract Crowdsale"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                              "typeString": "contract Crowdsale"
+                            }
+                          ],
+                          "id": 2019,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1688:7:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 2018,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1688:7:13",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 2021,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1688:18:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 2015,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1995,
+                        "src": "1672:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                          "typeString": "contract ERC20Mintable"
+                        }
+                      },
+                      "id": 2017,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "addMinter",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1847,
+                      "src": "1672:15:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 2022,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1672:35:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2023,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1672:35:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 2024,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1995,
+                        "src": "1718:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                          "typeString": "contract ERC20Mintable"
+                        }
+                      },
+                      "id": 2026,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "renounceMinter",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1856,
+                      "src": "1718:20:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 2027,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1718:22:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2028,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1718:22:13"
+                }
+              ]
+            },
+            "id": 2030,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2005,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2001,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "1430:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "1416:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                    "typeString": "contract ERC20Mintable"
+                  },
+                  "typeName": {
+                    "id": 2000,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1999,
+                      "name": "ERC20Mintable",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1731,
+                      "src": "1416:13:13"
+                    },
+                    "referencedDeclaration": 1731,
+                    "src": "1416:13:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                      "typeString": "contract ERC20Mintable"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2004,
+                  "mutability": "mutable",
+                  "name": "_crowdsale",
+                  "nameLocation": "1448:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "1438:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                    "typeString": "contract Crowdsale"
+                  },
+                  "typeName": {
+                    "id": 2003,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 2002,
+                      "name": "Crowdsale",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 2501,
+                      "src": "1438:9:13"
+                    },
+                    "referencedDeclaration": 2501,
+                    "src": "1438:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                      "typeString": "contract Crowdsale"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1415:44:13"
+            },
+            "returnParameters": {
+              "id": 2006,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1481:0:13"
+            },
+            "scope": 2031,
+            "src": "1404:344:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2032,
+        "src": "1310:441:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:1751:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/MyMintableTokenSale.sol",
+    "exportedSymbols": {
+      "Address": [
+        1314
+      ],
+      "Context": [
+        1336
+      ],
+      "Crowdsale": [
+        2501
+      ],
+      "ERC20": [
+        690
+      ],
+      "ERC20Mintable": [
+        1731
+      ],
+      "IERC20": [
+        768
+      ],
+      "IERC20Metadata": [
+        793
+      ],
+      "MintedCrowdsale": [
+        1780
+      ],
+      "MinterRole": [
+        1889
+      ],
+      "MyMintedCrowdsale": [
+        1992
+      ],
+      "MyMintedCrowdsaleDeployer": [
+        2031
+      ],
+      "MyMintedToken": [
+        1910
+      ],
+      "Ownable": [
+        104
+      ],
+      "ReentrancyGuard": [
+        144
+      ],
+      "Roles": [
+        2200
+      ],
+      "SafeERC20": [
+        1017
+      ],
+      "SafeMath": [
+        1648
+      ],
+      "kycContract": [
+        2551
+      ]
+    },
+    "id": 2032,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1891,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "project:/client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "file": "../client/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "id": 1892,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 691,
+        "src": "27:78:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/Mintable.sol",
+        "file": "./Mintable.sol",
+        "id": 1893,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 1732,
+        "src": "107:24:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/crowdsale.sol",
+        "file": "./crowdsale.sol",
+        "id": 1894,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 2502,
+        "src": "133:25:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/MintedCrowdsale.sol",
+        "file": "./MintedCrowdsale.sol",
+        "id": 1895,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 1781,
+        "src": "160:31:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/kycContract.sol",
+        "file": "./kycContract.sol",
+        "id": 1896,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2032,
+        "sourceUnit": 2552,
+        "src": "193:27:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1897,
+              "name": "ERC20Mintable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1731,
+              "src": "250:13:13"
+            },
+            "id": 1898,
+            "nodeType": "InheritanceSpecifier",
+            "src": "250:13:13"
+          }
+        ],
+        "canonicalName": "MyMintedToken",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1910,
+        "linearizedBaseContracts": [
+          1910,
+          1731,
+          1889,
+          690,
+          793,
+          768,
+          1336
+        ],
+        "name": "MyMintedToken",
+        "nameLocation": "233:13:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1908,
+              "nodeType": "Block",
+              "src": "347:10:13",
+              "statements": []
+            },
+            "id": 1909,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 1903,
+                    "name": "_initialSupply",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1900,
+                    "src": "318:14:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 1904,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1902,
+                  "name": "ERC20Mintable",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1731,
+                  "src": "304:13:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "304:29:13"
+              },
+              {
+                "arguments": [],
+                "id": 1906,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1905,
+                  "name": "MinterRole",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1889,
+                  "src": "334:10:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "334:12:13"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1900,
+                  "mutability": "mutable",
+                  "name": "_initialSupply",
+                  "nameLocation": "288:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1909,
+                  "src": "283:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1899,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "282:21:13"
+            },
+            "returnParameters": {
+              "id": 1907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "347:0:13"
+            },
+            "scope": 1910,
+            "src": "271:86:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2032,
+        "src": "224:136:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1911,
+              "name": "Crowdsale",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2501,
+              "src": "394:9:13"
+            },
+            "id": 1912,
+            "nodeType": "InheritanceSpecifier",
+            "src": "394:9:13"
+          },
+          {
+            "baseName": {
+              "id": 1913,
+              "name": "MintedCrowdsale",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1780,
+              "src": "405:15:13"
+            },
+            "id": 1914,
+            "nodeType": "InheritanceSpecifier",
+            "src": "405:15:13"
+          }
+        ],
+        "canonicalName": "MyMintedCrowdsale",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1992,
+        "linearizedBaseContracts": [
+          1992,
+          1780,
+          2501,
+          144,
+          1336
+        ],
+        "name": "MyMintedCrowdsale",
+        "nameLocation": "373:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1917,
+            "mutability": "mutable",
+            "name": "kyc",
+            "nameLocation": "442:3:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 1992,
+            "src": "430:15:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_kycContract_$2551",
+              "typeString": "contract kycContract"
+            },
+            "typeName": {
+              "id": 1916,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1915,
+                "name": "kycContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2551,
+                "src": "430:11:13"
+              },
+              "referencedDeclaration": 2551,
+              "src": "430:11:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_kycContract_$2551",
+                "typeString": "contract kycContract"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1939,
+              "nodeType": "Block",
+              "src": "666:29:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1937,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1935,
+                      "name": "kyc",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1917,
+                      "src": "677:3:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_kycContract_$2551",
+                        "typeString": "contract kycContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1936,
+                      "name": "_kyc",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1927,
+                      "src": "683:4:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_kycContract_$2551",
+                        "typeString": "contract kycContract"
+                      }
+                    },
+                    "src": "677:10:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_kycContract_$2551",
+                      "typeString": "contract kycContract"
+                    }
+                  },
+                  "id": 1938,
+                  "nodeType": "ExpressionStatement",
+                  "src": "677:10:13"
+                }
+              ]
+            },
+            "id": 1940,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 1930,
+                    "name": "rate",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1919,
+                    "src": "624:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "id": 1931,
+                    "name": "wallet",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1921,
+                    "src": "630:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  {
+                    "id": 1932,
+                    "name": "token",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1924,
+                    "src": "638:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$768",
+                      "typeString": "contract IERC20"
+                    }
+                  }
+                ],
+                "id": 1933,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 1929,
+                  "name": "MintedCrowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1780,
+                  "src": "608:15:13"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "608:36:13"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1928,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1919,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nameLocation": "482:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "474:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1918,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1921,
+                  "mutability": "mutable",
+                  "name": "wallet",
+                  "nameLocation": "535:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "519:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1920,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "519:15:13",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1924,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "559:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "552:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$768",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 1923,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1922,
+                      "name": "IERC20",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 768,
+                      "src": "552:6:13"
+                    },
+                    "referencedDeclaration": 768,
+                    "src": "552:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$768",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1927,
+                  "mutability": "mutable",
+                  "name": "_kyc",
+                  "nameLocation": "587:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1940,
+                  "src": "575:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_kycContract_$2551",
+                    "typeString": "contract kycContract"
+                  },
+                  "typeName": {
+                    "id": 1926,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1925,
+                      "name": "kycContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 2551,
+                      "src": "575:11:13"
+                    },
+                    "referencedDeclaration": 2551,
+                    "src": "575:11:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_kycContract_$2551",
+                      "typeString": "contract kycContract"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:135:13"
+            },
+            "returnParameters": {
+              "id": 1934,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "666:0:13"
+            },
+            "scope": 1992,
+            "src": "452:243:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              1779,
+              2451
+            ],
+            "body": {
+              "id": 1965,
+              "nodeType": "Block",
+              "src": "823:220:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 1959,
+                            "name": "beneficiary",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1942,
+                            "src": "955:11:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "id": 1960,
+                            "name": "tokenAmount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1944,
+                            "src": "968:11:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "arguments": [
+                              {
+                                "arguments": [
+                                  {
+                                    "arguments": [],
+                                    "expression": {
+                                      "argumentTypes": [],
+                                      "id": 1954,
+                                      "name": "token",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2313,
+                                      "src": "940:5:13",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_IERC20_$768_$",
+                                        "typeString": "function () view returns (contract IERC20)"
+                                      }
+                                    },
+                                    "id": 1955,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "kind": "functionCall",
+                                    "lValueRequested": false,
+                                    "names": [],
+                                    "nodeType": "FunctionCall",
+                                    "src": "940:7:13",
+                                    "tryCall": false,
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_IERC20_$768",
+                                      "typeString": "contract IERC20"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_IERC20_$768",
+                                      "typeString": "contract IERC20"
+                                    }
+                                  ],
+                                  "id": 1953,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "932:7:13",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_address_$",
+                                    "typeString": "type(address)"
+                                  },
+                                  "typeName": {
+                                    "id": 1952,
+                                    "name": "address",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "932:7:13",
+                                    "typeDescriptions": {}
+                                  }
+                                },
+                                "id": 1956,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "932:16:13",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "id": 1951,
+                              "name": "ERC20Mintable",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1731,
+                              "src": "918:13:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_ERC20Mintable_$1731_$",
+                                "typeString": "type(contract ERC20Mintable)"
+                              }
+                            },
+                            "id": 1957,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "918:31:13",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                              "typeString": "contract ERC20Mintable"
+                            }
+                          },
+                          "id": 1958,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "mint",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1730,
+                          "src": "918:36:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 1961,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "918:62:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4d696e74656443726f776473616c653a206d696e74696e67206661696c6564",
+                        "id": 1962,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:33:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d0eac45d7b8513926ae2e01dfc6ebd8082fa88af4d89904f45e3d97f75d97ab5",
+                          "typeString": "literal_string \"MintedCrowdsale: minting failed\""
+                        },
+                        "value": "MintedCrowdsale: minting failed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d0eac45d7b8513926ae2e01dfc6ebd8082fa88af4d89904f45e3d97f75d97ab5",
+                          "typeString": "literal_string \"MintedCrowdsale: minting failed\""
+                        }
+                      ],
+                      "id": 1950,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "900:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1963,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "900:135:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1964,
+                  "nodeType": "ExpressionStatement",
+                  "src": "900:135:13"
+                }
+              ]
+            },
+            "id": 1966,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_deliverTokens",
+            "nameLocation": "712:14:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1948,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [
+                {
+                  "id": 1946,
+                  "name": "Crowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2501,
+                  "src": "787:9:13"
+                },
+                {
+                  "id": 1947,
+                  "name": "MintedCrowdsale",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1780,
+                  "src": "798:15:13"
+                }
+              ],
+              "src": "778:36:13"
+            },
+            "parameters": {
+              "id": 1945,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1942,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "735:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1966,
+                  "src": "727:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1941,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "727:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1944,
+                  "mutability": "mutable",
+                  "name": "tokenAmount",
+                  "nameLocation": "756:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1966,
+                  "src": "748:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1943,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "748:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "726:42:13"
+            },
+            "returnParameters": {
+              "id": 1949,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "823:0:13"
+            },
+            "scope": 1992,
+            "src": "703:340:13",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              2426
+            ],
+            "body": {
+              "id": 1990,
+              "nodeType": "Block",
+              "src": "1144:159:13",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1977,
+                        "name": "beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1968,
+                        "src": "1182:11:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 1978,
+                        "name": "weiAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1970,
+                        "src": "1195:9:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 1974,
+                        "name": "super",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967271,
+                        "src": "1155:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_super$_MyMintedCrowdsale_$1992_$",
+                          "typeString": "type(contract super MyMintedCrowdsale)"
+                        }
+                      },
+                      "id": 1976,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_preValidatePurchase",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2426,
+                      "src": "1155:26:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) view"
+                      }
+                    },
+                    "id": 1979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1155:50:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1155:50:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 1984,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "1241:3:13",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1985,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "1241:10:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "id": 1982,
+                            "name": "kyc",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1917,
+                            "src": "1224:3:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_kycContract_$2551",
+                              "typeString": "contract kycContract"
+                            }
+                          },
+                          "id": 1983,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "kycCompleted",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2550,
+                          "src": "1224:16:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view external returns (bool)"
+                          }
+                        },
+                        "id": 1986,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1224:28:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4b5943206e6f7420636f6d706c657465642c20796f7520617265206e6f7420616c6c6f776564",
+                        "id": 1987,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1254:40:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_cdd8972ceaeaa9f36d47e1c639692fb977ba86beab91e351a91bc56230a26321",
+                          "typeString": "literal_string \"KYC not completed, you are not allowed\""
+                        },
+                        "value": "KYC not completed, you are not allowed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_cdd8972ceaeaa9f36d47e1c639692fb977ba86beab91e351a91bc56230a26321",
+                          "typeString": "literal_string \"KYC not completed, you are not allowed\""
+                        }
+                      ],
+                      "id": 1981,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1216:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1988,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1216:79:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1989,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1216:79:13"
+                }
+              ]
+            },
+            "id": 1991,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_preValidatePurchase",
+            "nameLocation": "1060:20:13",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1972,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1135:8:13"
+            },
+            "parameters": {
+              "id": 1971,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1968,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "1089:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1991,
+                  "src": "1081:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1967,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1081:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1970,
+                  "mutability": "mutable",
+                  "name": "weiAmount",
+                  "nameLocation": "1110:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1991,
+                  "src": "1102:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1969,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1102:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1080:40:13"
+            },
+            "returnParameters": {
+              "id": 1973,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1144:0:13"
+            },
+            "scope": 1992,
+            "src": "1051:252:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2032,
+        "src": "364:942:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MyMintedCrowdsaleDeployer",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2031,
+        "linearizedBaseContracts": [
+          2031
+        ],
+        "name": "MyMintedCrowdsaleDeployer",
+        "nameLocation": "1319:25:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1995,
+            "mutability": "mutable",
+            "name": "token",
+            "nameLocation": "1366:5:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2031,
+            "src": "1352:19:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+              "typeString": "contract ERC20Mintable"
+            },
+            "typeName": {
+              "id": 1994,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1993,
+                "name": "ERC20Mintable",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1731,
+                "src": "1352:13:13"
+              },
+              "referencedDeclaration": 1731,
+              "src": "1352:13:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                "typeString": "contract ERC20Mintable"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1998,
+            "mutability": "mutable",
+            "name": "crowdsale",
+            "nameLocation": "1388:9:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2031,
+            "src": "1378:19:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+              "typeString": "contract Crowdsale"
+            },
+            "typeName": {
+              "id": 1997,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1996,
+                "name": "Crowdsale",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 2501,
+                "src": "1378:9:13"
+              },
+              "referencedDeclaration": 2501,
+              "src": "1378:9:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                "typeString": "contract Crowdsale"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2029,
+              "nodeType": "Block",
+              "src": "1481:267:13",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2009,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2007,
+                      "name": "token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1995,
+                      "src": "1492:5:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                        "typeString": "contract ERC20Mintable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 2008,
+                      "name": "_token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2001,
+                      "src": "1500:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                        "typeString": "contract ERC20Mintable"
+                      }
+                    },
+                    "src": "1492:14:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                      "typeString": "contract ERC20Mintable"
+                    }
+                  },
+                  "id": 2010,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1492:14:13"
+                },
+                {
+                  "expression": {
+                    "id": 2013,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2011,
+                      "name": "crowdsale",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1998,
+                      "src": "1517:9:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                        "typeString": "contract Crowdsale"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 2012,
+                      "name": "_crowdsale",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2004,
+                      "src": "1529:10:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                        "typeString": "contract Crowdsale"
+                      }
+                    },
+                    "src": "1517:22:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                      "typeString": "contract Crowdsale"
+                    }
+                  },
+                  "id": 2014,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1517:22:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 2020,
+                            "name": "crowdsale",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1998,
+                            "src": "1696:9:13",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                              "typeString": "contract Crowdsale"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                              "typeString": "contract Crowdsale"
+                            }
+                          ],
+                          "id": 2019,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1688:7:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 2018,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1688:7:13",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 2021,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1688:18:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 2015,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1995,
+                        "src": "1672:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                          "typeString": "contract ERC20Mintable"
+                        }
+                      },
+                      "id": 2017,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "addMinter",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1847,
+                      "src": "1672:15:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 2022,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1672:35:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2023,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1672:35:13"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 2024,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1995,
+                        "src": "1718:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                          "typeString": "contract ERC20Mintable"
+                        }
+                      },
+                      "id": 2026,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "renounceMinter",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1856,
+                      "src": "1718:20:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 2027,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1718:22:13",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2028,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1718:22:13"
+                }
+              ]
+            },
+            "id": 2030,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2005,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2001,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "1430:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "1416:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                    "typeString": "contract ERC20Mintable"
+                  },
+                  "typeName": {
+                    "id": 2000,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1999,
+                      "name": "ERC20Mintable",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1731,
+                      "src": "1416:13:13"
+                    },
+                    "referencedDeclaration": 1731,
+                    "src": "1416:13:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Mintable_$1731",
+                      "typeString": "contract ERC20Mintable"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2004,
+                  "mutability": "mutable",
+                  "name": "_crowdsale",
+                  "nameLocation": "1448:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "1438:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                    "typeString": "contract Crowdsale"
+                  },
+                  "typeName": {
+                    "id": 2003,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 2002,
+                      "name": "Crowdsale",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 2501,
+                      "src": "1438:9:13"
+                    },
+                    "referencedDeclaration": 2501,
+                    "src": "1438:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Crowdsale_$2501",
+                      "typeString": "contract Crowdsale"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1415:44:13"
+            },
+            "returnParameters": {
+              "id": 2006,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1481:0:13"
+            },
+            "scope": 2031,
+            "src": "1404:344:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2032,
+        "src": "1310:441:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:1751:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x1AE5B1DB36C418134f291be0c4b18Cb4B8F166FB",
+      "transactionHash": "0xf042d5462cf85e8a568ae676714f50ab0e7bd08b668f26e069262826d6e7f4a2"
+    }
+  },
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-02-06T05:27:21.775Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

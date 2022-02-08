@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceReceived",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "receiveMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "_amount",
+						"type": "uint64"
+					}
+				],
+				"name": "withdrawMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/ExceptionHandling.sol": "ExceptionExample"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/ExceptionHandling.sol": {
+			"keccak256": "0xc0ba2bd7d3c64954b0ca8bc50ec8d47b3ca35bee4b7875216c693e25fcadd49d",
+			"urls": [
+				"bzz-raw://584a6878d69de89f6f7c4e950b46130e3a1795ec769358414c439cb5058b01a6",
+				"dweb:/ipfs/QmWpVTYBcWjezHNziKoSbLLXaswAu6QFkANCgVeKA5KLZv"
+			]
+		}
+	},
+	"version": 1
+}

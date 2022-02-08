@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "increment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myUint8",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/RolloverExample.sol": "RolloverExample"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/RolloverExample.sol": {
+			"keccak256": "0xf16803a02b80758b309d78af64b428dde126bc5cb9a929edd33d30563ba2e46b",
+			"urls": [
+				"bzz-raw://2ec1655bd7a03c79cf607bb4736d405f377ea5c12c3a181fdbab4c5d8f8f39ea",
+				"dweb:/ipfs/QmPCAkbJ1MYvQaPLoo8wLBB4cv963qjt1yXTwzNcURJGuE"
+			]
+		}
+	},
+	"version": 1
+}

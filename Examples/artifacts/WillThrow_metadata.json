@@ -1,0 +1,52 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "aFunction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum Blockchain Course/TryCatch.sol": "WillThrow"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum Blockchain Course/TryCatch.sol": {
+			"keccak256": "0x0e9b9c27dc62c23b7551b8da78c1992949ce9388574880b46662f66f6fa275dd",
+			"urls": [
+				"bzz-raw://abba47362ba95ad21eeb9c57561c83f2b5ead502ef68698c338b5d3d21ca8775",
+				"dweb:/ipfs/QmZkaNmYS7ZjLu2VQVtzBztZi1857Hnh4eoBGzkXp6yy5e"
+			]
+		}
+	},
+	"version": 1
+}
